@@ -2,10 +2,10 @@ const PetController = require('../controllers/pet.controller');
 
 module.exports = app => {
     
-    app.get('/pets/get', PetController.findAll);
-    app.get('/pet/:id', PetController.findOne);
-    app.post('/pet/new', PetController.createNew);
-    app.put('/pet/update/:id', PetController.update);
-    app.delete('/pet/delete/:id', PetController.delete);
+    app.get('/api/pets/get', PetController.findAll);
+    app.get('/api/pet/:id', PetController.findOne);
+    app.post('/api/pet/new', PetController.createNew);
+    app.put('/api/pet/update/:id', PetController.update);
+    app.delete('/api/pet/delete/:id', PetController.delete);
     
 }

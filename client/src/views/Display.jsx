@@ -14,7 +14,7 @@ const Display = () => {
 
     useEffect(() => {
     
-        axios.get('http://localhost:8000/pet/'+ id)
+        axios.get('http://localhost:8000/api/pet/'+ id)
             .then(res => {
                 setPet(res.data);
                 setLoaded(true);

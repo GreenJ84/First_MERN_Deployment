@@ -11,7 +11,7 @@ const Create = () => {
 
     const createPet = thisPet => {
         console.log(thisPet);
-        axios.post('http://localhost:8000/pet/new', thisPet)
+        axios.post('http://localhost:8000/api/pet/new', thisPet)
                 .then(res => { console.log(res.data);  nav('/');})
                 .catch(err => {
                     console.log("object");

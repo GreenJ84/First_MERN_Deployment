@@ -13,7 +13,7 @@ const Update = () => {
     const nav = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8000/pet/'+ id)
+        axios.get('http://localhost:8000/api/pet/'+ id)
             .then(res => {
                 setPet(res.data);
                 setLoaded(true);
@@ -31,7 +31,7 @@ const Update = () => {
         
 
         const updatePet = thisPet => {
-            axios.put('http://localhost:8000/pet/update/'+id, thisPet)
+            axios.put('http://localhost:8000/api/pet/update/'+id, thisPet)
                 .then(res => {console.log(res); nav('/') })
                 .catch(err=>{
                     const errorResponse = err.response.data.error.errors;
