@@ -19,7 +19,7 @@ const Main = () => {
 
     return (
     <>
-    <NavBar direct='/new' button='add a pet to the shelter' phrase='These pets are looking for a good home' />
+    <NavBar direct='/new' button='Add a Pet' phrase='These pets are looking for a good home' />
     <PetList successCallback={removeFromDom} pets={pets}/>
     </>
     )
