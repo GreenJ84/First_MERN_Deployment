@@ -2,6 +2,36 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const formStyle = {
+    backgroundColor: 'darkgrey',
+    width: '80%',
+    margin: '0px 10%',
+    borderRadius: '30px',
+    height: '700%',
+    padding: '5%'
+
+}
+const button ={
+    backgroundColor: 'lightgrey',
+    color: 'black',
+    textDecoration: 'none',
+    padding: '1% 3%',
+    borderRadius: '5px',
+    margin: '5% 5%',
+    width: '25%',
+    height: '7%'
+}
+const lines = {
+    margin: '0px 0px 2.5% 0px',
+    width: '100%',
+    fontSize: '20px'
+}
+const input = {
+    width: '60%',
+    height: '30px',
+    margin: '1.5% 0px 0px 0px'
+}
+
 const PetForm = (props) => {
     const { name, type, description, skill1, skill2, skill3, onSubmit, submit } = props;
     
@@ -32,41 +62,41 @@ const PetForm = (props) => {
 
     return (
         <>
-            <form onSubmit={ submitHandler }>
+            <form style={ formStyle } onSubmit={ submitHandler }>
             <div>
-                <p>
+                <p style={lines}>
                     <label>Pet Name:</label><br/>
-                    <input type='text' onChange= { e => setPName(e.target.value) } value={ pName } />
+                    <input style={ input } type='text' onChange= { e => setPName(e.target.value) } value={ pName } />
                 </p>
-                <p>
+                <p style={lines}>
                     <label>Pet Type: </label><br/>
-                    <input type='text' onChange= { e => setPType(e.target.value) } value={ pType } />
+                    <input style={ input } type='text' onChange= { e => setPType(e.target.value) } value={ pType } />
                 </p>
-                <p>
+                <p style={lines}>
                     <label>Pet Description: </label><br/>
-                    <input type='text' onChange= { e => setPDescription(e.target.value) } value={ pDescription } />
+                    <input style={ input } type='text' onChange= { e => setPDescription(e.target.value) } value={ pDescription } />
                 </p>
             </div>
             <div>
-                <p>
+                <p  style={lines}>
                     Skills (Optional):
                 </p>
-                <p>
+                <p  style={lines}>
                     <label>Skill 1:</label><br/>
-                    <input type='text' onChange= { e => setPs1(e.target.value) } value={ ps1 } />
+                    <input style={ input } type='text' onChange= { e => setPs1(e.target.value) } value={ ps1 } />
                 </p>
-                <p>
+                <p  style={lines}>
                     <label>Skill 2:</label><br/>
-                    <input type='text' onChange= { e => setPs2(e.target.value) } value={ ps2 } />
+                    <input style={ input } type='text' onChange= { e => setPs2(e.target.value) } value={ ps2 } />
                 </p>
-                <p>
+                <p  style={lines}>
                     <label>Skill 3:</label><br/>
-                    <input type='text' onChange= { e => setPs3(e.target.value) } value={ ps3 } />
+                    <input style={ input } type='text' onChange= { e => setPs3(e.target.value) } value={ ps3 } />
                 </p>
             </div>
 
-            <input type='button' value='Cancel' onClick={ returnHome }/>
-            <input type='Submit' value={submit+' Pet'}/>
+            <input style={ button } type='button' value='Cancel' onClick={ returnHome }/>
+            <input style={ button } type='Submit' value={submit+' Pet'}/>
             </form>
         </>
         )
