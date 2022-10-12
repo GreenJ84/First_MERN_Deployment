@@ -1,6 +1,16 @@
 import axios from "axios";
 import React from "react";
 
+const deleteButton = {
+    width: '15%',
+    backgroundColor: 'lightcoral',
+    color: 'black',
+    textDecoration: 'none',
+    padding: '.7%',
+    borderRadius: '5px',
+    boxShadow: '2.5px 2.5px grey'
+}
+
 const DeleteButton = props => {
     const { petId, buttonName, successCallback } = props;
 
@@ -11,7 +21,7 @@ const DeleteButton = props => {
     };
 
     return (
-        <button onClick={ deletePet }>
+        <button style={deleteButton}onClick={ deletePet }>
             {buttonName}
         </button>
     )
